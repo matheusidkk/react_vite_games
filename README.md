@@ -1,8 +1,21 @@
-# React + Vite
+# Jogos em React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Meu projeto em React contém uma variedade de jogos simples:
 
-Currently, two official plugins are available:
+- **Genius**: Teste sua memória com este jogo de repetição de sequências coloridas.
+- **Jokenpo**: Desafie o computador neste clássico jogo de pedra, papel e tesoura.
+- **Maior/Menor**: Confie na sua intuição para adivinhar se o próximo número será maior ou menor.
+- **Jogo da Memória**: Encontre todos os pares de cartas o mais rápido possível.
+- **Jogo da Velha**: Jogue contra um amigo neste jogo de estratégia.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Ferramentas Utilizadas:
+
+- **React**: A base sólida para construir interfaces interativas.
+- **React Router DOM**: Facilitando a navegação suave entre os diferentes jogos.
+- **Vite**: Uma ferramenta poderosa que acelera o desenvolvimento do projeto React.
+
+## Deploy:
+
+**https://matheusidkk.github.io/react_vite_games/**
+
+![Logo do Projeto](https://i.ibb.co/LxhvS0C/jogos.png)
