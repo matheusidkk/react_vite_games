@@ -23,15 +23,11 @@ export default function Jokenpo() {
   const [inimigoCard, setInimigoCard] = useState(null);
 
   useEffect(() => {
-    if (ganhador) {
-      toast(`🎉 O ${ganhador} ganhou! 🎉`);
-    }
-  }, [ganhador]);
-
-  useEffect(() => {
     if (ganhador === 'jogador') {
+      toast(`🎉 Você ganhou, próxima rodada! 🎉`);
       setTurno(turno + 1);
     } else if (ganhador === 'inimigo') {
+      toast(`❌ Você perdeu! ❌`);
       setTurno(1);
     }
   }, [ganhador]);
@@ -93,7 +89,12 @@ export default function Jokenpo() {
 
   return (
     <div className='Jokenpo'>
-      <SideButtons click={resetarJogo} turno={turno} jogando={'Resetar'} />
+      <SideButtons click={resetarJogo} turno={turno} jogando='Resetar'
+        titulo="Jo-ken-po"
+        comoJogar='Dois jogadores escolhem simultaneamente entre pedra, papel ou tesoura. 
+        As regras são simples: pedra ganha de tesoura, tesoura ganha de papel, e papel ganha de pedra. 
+        Se ambos escolherem o mesmo, é um empate. 
+        O jogo continua até que um jogador vença o número de rodadas combinado previamente.'/>
 
       <div className="jogoBox">
         <div className="jogo">
@@ -106,6 +107,7 @@ export default function Jokenpo() {
           </div>
         </div>
       </div>
+
       <div className="cards">
         <span />
         <CardJKP imagem={cards.pedra} onClick={() => jogar(cards.pedra)} />

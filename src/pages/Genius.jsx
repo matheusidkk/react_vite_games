@@ -37,15 +37,26 @@ export default function Genius() {
     setClicavel(false); // Desativa cliques
     seq.forEach((casa, index) => {
       setTimeout(() => {
-        document.querySelector(`.c${casa + 1}`).classList.add('active');
+        ativarCasa(casa);
         setTimeout(() => {
-          document.querySelector(`.c${casa + 1}`).classList.remove('active');
+          ativarCasa(casa, false);
           if (index === seq.length - 1) {
             setClicavel(true); // Reativa cliques após a sequência terminar
           }
         }, 500);
       }, (index + 1) * 700);
     });
+  }
+
+  function ativarCasa(casa, ativar = true) {
+    const casaElement = document.querySelector(`.casa.c${casa + 1}`);
+    if (casaElement) {
+      if (ativar) {
+        casaElement.classList.add('active');
+      } else {
+        casaElement.classList.remove('active');
+      }
+    }
   }
 
   function checarSequencia() {
@@ -62,9 +73,9 @@ export default function Genius() {
   function casaClicada(i) {
     if (jogando && clicavel) {
       setSequenciaJogador([...sequenciaJogador, i]);
-      document.querySelector(`.c${i + 1}`).classList.add('active');
+      ativarCasa(i);
       setTimeout(() => {
-        document.querySelector(`.c${i + 1}`).classList.remove('active');
+        ativarCasa(i, false);
       }, 500);
     }
   }
@@ -78,19 +89,19 @@ export default function Genius() {
 
   return (
     <div className='Genius'>
-      <SideButtons click={resetarJogo} turno={turno} jogando={jogando ? 'Resetar' : 'Iniciar'}/>
+      <SideButtons click={resetarJogo} turno={turno} jogando={jogando ? 'Resetar' : 'Iniciar'}
+        titulo="Genius"
+        comoJogar='O Jogo Genius testa sua memória e concentração. 
+        O jogo começa com o dispositivo acendendo uma sequência de luzes coloridas. 
+        Seu objetivo é repetir a sequência correta pressionando as cores na mesma ordem. 
+        A cada rodada, a sequência fica mais longa e difícil. O jogo termina quando você errar a sequência. 
+        Tente memorizar e repetir o máximo de sequências possível!'/>
 
       <div className="jogoBox">
         <div className="jogo">
-          <div className="casa c1" onClick={() => casaClicada(0)}></div>
-          <div className="casa c2" onClick={() => casaClicada(1)}></div>
-          <div className="casa c3" onClick={() => casaClicada(2)}></div>
-          <div className="casa c4" onClick={() => casaClicada(3)}></div>
-          <div className="casa c5" onClick={() => casaClicada(4)}></div>
-          <div className="casa c6" onClick={() => casaClicada(5)}></div>
-          <div className="casa c7" onClick={() => casaClicada(6)}></div>
-          <div className="casa c8" onClick={() => casaClicada(7)}></div>
-          <div className="casa c9" onClick={() => casaClicada(8)}></div>
+          {[...Array(9)].map((_, index) => (
+            <div key={index} className={`casa c${index + 1}`} onClick={() => casaClicada(index)}></div>
+          ))}
         </div>
       </div>
     </div>

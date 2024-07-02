@@ -75,7 +75,13 @@ export default function Memoria() {
 
   return (
     <div className='Memoria'>
-      <SideButtons click={() => (setCartas(embaralharCartas(cartasIniciais)), setTurno(1))} turno={turno} jogando={'Resetar'}/>
+      <SideButtons click={() => (setCartas(embaralharCartas(cartasIniciais)), setTurno(1))} turno={turno} jogando={'Resetar'}
+        titulo="Jogo da Memória"
+        comoJogar='O Jogo da Memória é jogado com cartas viradas para baixo. 
+        Os jogadores se revezam virando duas cartas por vez, tentando encontrar pares de cartas iguais. 
+        Se um par é encontrado, o jogador continua jogando. Se não, as cartas são viradas novamente e o próximo 
+        jogador faz sua jogada. O jogo termina quando todos os pares são encontrados, 
+        e o jogador com mais pares ganha.'/>
 
       <div className="jogo">
         <div className="cards">

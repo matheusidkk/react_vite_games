@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-
 import SideButtons from './components/SideButtons';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,7 +7,7 @@ import './styles/Velha.css';
 
 export default function Velha() {
   const [turno, setTurno] = useState('X');
-  const [mesa, setMesa] = useState([null, null, null, null, null, null, null, null, null]);
+  const [mesa, setMesa] = useState(Array(9).fill(null)); // Array inicializado com 9 posições nulas
   const [ganhador, setGanhador] = useState(null);
 
   useEffect(() => {
@@ -17,16 +16,16 @@ export default function Velha() {
     }
   }, [ganhador]);
 
-  function marcarCasa(casa) {
-    if (mesa[casa] == null && !ganhador) {  // Verificar se a casa está vazia e se não há vencedor
-      const novaMesa = [...mesa];  // Criar uma cópia do array
-      novaMesa[casa] = turno;  // Atualizar a casa com o turno atual
-      setMesa(novaMesa);  // Atualizar o estado
+  function marcarCasa(index) {
+    if (mesa[index] === null && !ganhador) {
+      const novaMesa = [...mesa]; // Cópia do array para imutabilidade
+      novaMesa[index] = turno;
+      setMesa(novaMesa);
 
       if (verificarVencedor(novaMesa, turno)) {
         setGanhador(turno);
       } else {
-        setTurno(turno === 'X' ? 'O' : 'X');  // Alternar o turno
+        setTurno(turno === 'X' ? 'O' : 'X');
       }
     }
   }
@@ -49,26 +48,30 @@ export default function Velha() {
   }
 
   function resetarJogo() {
-    setMesa([null, null, null, null, null, null, null, null, null]);
+    setMesa(Array(9).fill(null)); // Reinicia o tabuleiro com 9 posições nulas
     setTurno('X');
     setGanhador(null);
   }
 
   return (
     <div className='Velha'>
-      <SideButtons click={resetarJogo} turno={turno} jogando={'Resetar'}/>
+      <SideButtons click={resetarJogo} turno={turno} jogando={'Resetar'} 
+        titulo="Jogo da velha"
+        comoJogar='Dois jogadores se revezam para marcar "X" ou "O" em uma grade de 3x3, 
+        tentando alinhar três de seus símbolos em linha reta (horizontal, vertical ou diagonal). 
+        O jogo termina quando um jogador vence ou todas as células são preenchidas, resultando em empate.'/>
 
       <div className="jogoBox">
         <div className="jogo">
-          <div className="casa c1" onClick={() => marcarCasa(0)}>{mesa[0]}</div>
-          <div className="casa c2" onClick={() => marcarCasa(1)}>{mesa[1]}</div>
-          <div className="casa c3" onClick={() => marcarCasa(2)}>{mesa[2]}</div>
-          <div className="casa c4" onClick={() => marcarCasa(3)}>{mesa[3]}</div>
-          <div className="casa c5" onClick={() => marcarCasa(4)}>{mesa[4]}</div>
-          <div className="casa c6" onClick={() => marcarCasa(5)}>{mesa[5]}</div>
-          <div className="casa c7" onClick={() => marcarCasa(6)}>{mesa[6]}</div>
-          <div className="casa c8" onClick={() => marcarCasa(7)}>{mesa[7]}</div>
-          <div className="casa c9" onClick={() => marcarCasa(8)}>{mesa[8]}</div>
+          {mesa.map((casa, index) => (
+            <div
+              key={index}
+              className={`casa c${index + 1} ${casa}`}
+              onClick={() => marcarCasa(index)}
+            >
+              {casa}
+            </div>
+          ))}
         </div>
       </div>
     </div>

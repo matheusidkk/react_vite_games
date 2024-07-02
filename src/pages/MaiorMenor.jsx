@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { IoIosArrowUp } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
 import SideButtons from './components/SideButtons';
 import CardFlip from './components/CardFlip';
@@ -19,13 +18,12 @@ export default function MaiorMenor() {
 
   useEffect(() => {
     if (ganhador) {
-      if (ganhador === 'player') {
-        toast('Você ganhou! Próximo turno.');
-      } else if (ganhador === 'perdeu') {
-        toast('Você perdeu!');
-      }
+      const mensagem = ganhador === 'player' ? '🎉 Você ganhou, Próxima rodada! 🎉' : '❌ Você perdeu! ❌';
+      toast(mensagem);
+
       // Redefinir o estado ganhador após a mensagem ser exibida
-      setTimeout(() => setGanhador(null), 2000);
+      const timer = setTimeout(() => setGanhador(null), 2000);
+      return () => clearTimeout(timer);
     }
   }, [ganhador]);
 
@@ -58,25 +56,30 @@ export default function MaiorMenor() {
         setNumeroNovo(null);
         setVirada(false);
         setBloqueado(false);
-        setGanhador('player'); // Definir ganhador como 'player'
+        setGanhador('player');
       } else {
         setGanhador('perdeu');
       }
-    }, 1000); // 2 segundos de bloqueio
+    }, 1000);
   };
 
   return (
     <div className='MaiorMenor'>
-      <SideButtons click={resetarJogo} turno={turno} jogando={'Resetar'} />
+      <SideButtons click={resetarJogo} turno={turno} jogando='Resetar'
+        titulo="Maior menor"
+        comoJogar='O objetivo do jogo é adivinhar se a próxima carta virada será maior ou menor que a carta atual.
+        O jogador faz sua aposta (maior ou menor) e a próxima carta é revelada. Se a previsão estiver correta, 
+        o jogador ganha um ponto. Se estiver errada, o jogo termina. Continue jogando e acumulando pontos 
+        enquanto suas previsões estiverem corretas!'/>
 
       <div className="jogoBox">
         <div className="jogo">
-          <div className="casa maior" onClick={() => handleEscolha('maior')}>
-            {<IoIosArrowUp/>}
+          <div className="casa maior" onClick={() => handleEscolha('maior')} aria-label="Escolher maior">
+            <IoIosArrowUp />
           </div>
           <CardFlip numero1={numeroAtual} numero2={numeroNovo} virada={virada} />
-          <div className="casa menor" onClick={() => handleEscolha('menor')}>
-            {<IoIosArrowDown/>}
+          <div className="casa menor" onClick={() => handleEscolha('menor')} aria-label="Escolher menor">
+            <IoIosArrowDown />
           </div>
         </div>
       </div>

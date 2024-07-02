@@ -1,0 +1,58 @@
+.Sobre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .Sobre a {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .Sobre a:hover,
+  .Sobre a:focus {
+    transform: scale(1.05);
+  }
+  
+  .Sobre button {
+    height: 100%;
+    width: 100%;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+  }
+  
+  .Sobre .linkedin {
+    background-image: url('../../assets/linkedin.webp');
+  }
+  
+  .Sobre .github {
+    background-image: url('../../assets/github.png');
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .Sobre a {
+      height: 200px;
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Sobre a {
+      height: 150px;
+      width: 150px;
+    }
+  }
+  

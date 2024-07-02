@@ -1,6 +1,6 @@
 .MaiorMenor {
     display: flex;
-    user-select: none;
+    user-select: none; /* Evita seleção de texto */
     height: 100vh;
     width: 100vw;
 }
@@ -32,7 +32,7 @@
     font-size: 10vw;
     background-color: #1a1a1a;
     cursor: pointer;
-    transition: 0.2s;
+    transition: background-color 0.2s, color 0.2s; /* Adiciona transição para hover */
 }
 
 .MaiorMenor .maior {

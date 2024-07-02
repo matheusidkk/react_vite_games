@@ -7,7 +7,7 @@ import Velha from '../pages/Velha'
 import Genius from '../pages/Genius'
 import Jokenpo from '../pages/Jokenpo'
 import MaiorMenor from '../pages/MaiorMenor'
-import Adivinhacao from '../pages/Adivinhacao'
+import Sobre from '../pages/Sobre'
 
 import './components.css'
 
@@ -21,7 +21,7 @@ export default function Content() {
           <Route path="/genius" element={<Genius/>}/>
           <Route path="/jokenpo" element={<Jokenpo/>}/>
           <Route path="/maiormenor" element={<MaiorMenor/>}/>
-          <Route path="/adivinhacao" element={<Adivinhacao/>}/>
+          <Route path="/sobre" element={<Sobre/>}/>
           <Route path="*" element={<Home/>}/>
         </Routes>
     </main>
