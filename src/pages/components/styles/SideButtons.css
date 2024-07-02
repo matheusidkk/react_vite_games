@@ -71,7 +71,7 @@
         width: 56%;
         margin-top: 0;
         border-radius: 10px 0 0 10px;
-        font-size: 8vw;
+        font-size: 7vw;
     }
 
     .SideButtons .turno {
@@ -79,11 +79,11 @@
         width: 40%;
         margin-top: 0;
         margin-left: 4%;
-        font-size: 4vw;
+        font-size: 3vw;
         border-radius: 0 10px 10px 0;
     }
 
     .SideButtons .turno div {
-        font-size: 10vw;
+        font-size: 5vw;
     }
 }
