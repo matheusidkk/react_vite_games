@@ -27,7 +27,7 @@ export default function App() {
           transform: 'translateX(-50%)',
         }}
       />
-      <BrowserRouter>
+      <BrowserRouter basename='/react_vite_games'>
         <Menu />
         <Content />
       </BrowserRouter>
