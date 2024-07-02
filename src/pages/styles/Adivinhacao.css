@@ -1,0 +1,135 @@
+.Adivinhacao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    position: relative; /* Necessário para posicionar a div "vencedor" corretamente */
+    height: 100vh; /* Define a altura para 100% da altura da viewport */
+}
+
+.Adivinhacao .botoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space;
+    height: 35vw;
+    width: 20%;
+    margin-left: -10px;
+    margin-right: 10px;
+}
+
+.Adivinhacao .botoes button {
+    height: 70px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    background-color: #ffb327;
+    color: #2e2e2e;
+    font-size: 1.3vw;
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.Adivinhacao .botoes button:hover {
+    background-color: #ffc965;
+}
+
+.Adivinhacao .botoes button:active {
+    background-color: #fff;
+}
+
+.Adivinhacao .turno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 150px;
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 0 0 10px 10px;
+    font-size: 1.4vw;
+    margin-top: 10px;
+}
+
+.Adivinhacao .turno div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    width: 80%;
+    font-size: 5vw;
+    border-top: 1px solid #fff;
+}
+
+.Adivinhacao .jogo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 35vw;
+    height: 13vw; /* Define a altura igual à largura para manter um quadrado */
+}
+
+.Adivinhacao .casa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6.5vw;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    height: 100%;
+    width: 90%;
+    cursor: pointer;
+}
+
+.Adivinhacao .bloco {
+    height: 100%;
+    width: 100%;
+    margin-top: -300px;
+    background: linear-gradient(90deg, rgba(97,63,0,1) 0%, rgba(255,179,39,1) 36%, rgba(106,69,0,1) 81%, rgba(142,93,4,1) 100%);
+    z-index: 2;
+}
+
+.Adivinhacao .bola {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-color: red;
+    z-index: 1;
+}
+
+@media screen and (max-width: 500px) {
+    .Adivinhacao {
+        flex-direction: column;
+    }
+
+    .Adivinhacao .botoes {
+        height: 50px;
+        width: 85vw;
+        flex-direction: row;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .Adivinhacao .botoes button {
+        height: 100%;
+        width: 56%;
+        border-radius: 10px 0 0 10px;
+        font-size: 5vw;
+    }
+
+    .Adivinhacao .turno {
+        height: 100%;
+        width: 40%;
+        margin-top: 0;
+        margin-left: 4%;
+        
+        border-radius: 0 10px 10px 0;
+    }
+
+    .Adivinhacao .jogo {
+        height: 85vw;
+        width: 85vw;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,24 @@
+.CardJKP {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border: 2px solid #ffb327;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    z-index: 1;
+    overflow: hidden;
+    user-select: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.CardJKP:hover {
+    height: 140%;
+    margin-top: -35%;
+}
+
+.CardJKP img {
+    width: 100%;
+}

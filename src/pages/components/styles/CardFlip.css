@@ -1,0 +1,54 @@
+.CardFlipContainer {
+    position: relative;
+    height: 25vw;
+    width: 20vw;
+    margin: 1%;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.CardFlip {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.CardFlip .flipper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.CardFlipContainer.flipped .flipper {
+    transform: rotateY(180deg);
+}
+
+.CardFlip .frente, .CardFlip .tras {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background-color: #ffb327;
+    color: #1a1a1a;
+    font-size: 10vw;
+}
+
+.CardFlip .tras {
+    transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 500px) {
+
+    .CardFlipContainer {
+        height: 40vh;
+        width: 30vw;
+        font-size: 20vw;
+    }
+}

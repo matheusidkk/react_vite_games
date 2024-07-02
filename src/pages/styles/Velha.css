@@ -1,0 +1,61 @@
+.Velha {
+    display: flex;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+}
+
+.Velha .jogoBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+}
+
+.Velha .jogo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 45vw;
+    height: 45vw;
+}
+
+.Velha .casa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6.5vw;
+    border: 1px solid transparent; /* Adicionado para box-sizing */
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.Velha .c1, .Velha .c2, .Velha .c4, .Velha .c5, .Velha .c7, .Velha .c8 {
+    border-right: 3px solid #fff;
+}
+
+.Velha .c1, .Velha .c2, .Velha .c3, .Velha .c4, .Velha .c5, .Velha .c6 {
+    border-bottom: 3px solid #fff;
+}
+
+
+@media screen and (max-width: 500px) {
+    .Velha {
+        flex-direction: column;
+    }
+    
+    .Velha .jogoBox {
+        align-items: flex-start;
+        height: 80vh;
+        width: 100vw;
+    }
+
+    .Velha .jogo {
+        height: 85vw;
+        width: 85vw;
+        margin-top: 20px;
+    }
+}

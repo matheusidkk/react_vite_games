@@ -1,0 +1,78 @@
+.MaiorMenor {
+    display: flex;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+}
+
+.MaiorMenor .jogoBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+}
+
+.MaiorMenor .jogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    height: 45vw;
+}
+
+.MaiorMenor .casa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vw;
+    width: 20vw;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    font-size: 10vw;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.MaiorMenor .maior {
+    color: #76ff69;
+}
+
+.MaiorMenor .maior:hover {
+    background-color: #76ff69;
+    color: #1a1a1a;
+}
+
+.MaiorMenor .menor {
+    color: #ff6969;
+}
+
+.MaiorMenor .menor:hover {
+    background-color: #ff6969;
+    color: #1a1a1a;
+}
+
+@media screen and (max-width: 500px) {
+    .MaiorMenor {
+        flex-direction: column;
+    }
+    
+    .MaiorMenor .jogoBox {
+        align-items: flex-start;
+        height: 80vh;
+        width: 100vw;
+    }
+
+    .MaiorMenor .jogo {
+        height: 85vw;
+        width: 85vw;
+        margin-top: 20px;
+    }
+
+    .MaiorMenor .casa {
+        height: 40vh;
+        width: 30vw;
+        font-size: 20vw;
+    }
+}

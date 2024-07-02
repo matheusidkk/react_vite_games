@@ -1,0 +1,101 @@
+.Genius {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+}
+
+.Genius .jogoBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+}
+
+.Genius .jogo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 45vw;
+    height: 45vw;
+    border: 3px solid #fff;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.Genius .casa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6.5vw;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    background-color: #1a1a1a; /* Default dark background */
+    transition: background-color 0.5s;
+}
+
+.Genius .c1.active {
+    background-color: red;
+}
+
+.Genius .c2.active {
+    background-color: green;
+}
+
+.Genius .c3.active {
+    background-color: blue;
+}
+
+.Genius .c4.active {
+    background-color: yellow;
+}
+
+.Genius .c5.active {
+    background-color: orange;
+}
+
+.Genius .c6.active {
+    background-color: purple;
+}
+
+.Genius .c7.active {
+    background-color: pink;
+}
+
+.Genius .c8.active {
+    background-color: cyan;
+}
+
+.Genius .c9.active {
+    background-color: lime;
+}
+
+.Genius .c1, .Genius .c2, .Genius .c4, .Genius .c5, .Genius .c7, .Genius .c8 {
+    border-right: 3px solid #fff;
+}
+
+.Genius .c1, .Genius .c2, .Genius .c3, .Genius .c4, .Genius .c5, .Genius .c6 {
+    border-bottom: 3px solid #fff;
+}
+
+@media screen and (max-width: 500px) {
+    .Genius {
+        flex-direction: column;
+    }
+
+    .Genius .jogoBox {
+        align-items: flex-start;
+        height: 80vh;
+        width: 100vw;
+    }
+
+    .Genius .jogo {
+        height: 85vw;
+        width: 85vw;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,85 @@
+.Menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 200px;
+    border-right: 1px solid #ffb327;
+    background-color: #1a1a1a;
+    transition: 0.2s;
+    z-index: 2;
+}
+
+.openMenu {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 199px;
+    width: 70px;
+    height: 70px;
+    background-color: #1a1a1a;
+    border: 1px solid #ffb327;
+    border-radius: 0 0 10px 0px;
+    font-size: 3.3em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.openMenu:hover {
+    background-color: #ffb327;
+    color: #1a1a1a;
+}
+
+.Menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 100%;
+    background-color: transparent;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.Menu a:last-child {
+    border-top: 1px solid #ffb327;
+    margin-top: auto;
+}
+
+.Menu .outro:hover {
+    background-color: #2e2e2e;
+}
+
+.Menu .atual {
+    background-color:#ffb327;
+    color: #1a1a1a;
+}
+
+.Content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+@media screen and (max-width: 500px) {
+    .Menu {
+        width: 100vw;
+    }
+
+    .Menu a:nth-child(2) {
+        margin-top: 10vw;
+    }
+
+    .openMenu {
+        position: fixed;
+        height: 5vh;
+        width: 100vw;
+        left: 0;
+        border-radius: 0;
+    }
+}

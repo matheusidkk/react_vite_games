@@ -1,0 +1,51 @@
+.CardContainer {
+    position: relative;
+    height: 12.7vw;
+    width: 7.54vw;
+    margin: 1%;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.Card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.Card .tras img {
+    width: 100%;
+}
+
+.Card .frente img {
+    height: 100%;
+}
+
+.Card .flipper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.CardContainer.flipped .flipper {
+    transform: rotateY(180deg);
+}
+
+.Card .frente, .Card .tras {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.Card .tras {
+    transform: rotateY(180deg);
+}

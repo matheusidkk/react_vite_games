@@ -1,0 +1,90 @@
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    10% {
+      transform: translateY(-30px);
+    }
+    35% {
+      transform: translateY(-15px);
+    }
+}
+.bounce {
+animation: bounce 0.5s;
+}
+
+.Jokenpo {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.Jokenpo .jogoBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+}
+
+.Jokenpo .jogo {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    width: 70%;
+    margin-top: -200px;
+}
+
+.Jokenpo .inimigo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Jokenpo .jogo img {
+    width: 20vw;
+}
+
+.Jokenpo .player img {
+    transform: scaleX(-100%);
+}
+
+.Jokenpo .traco {
+    height: 100%;
+    width: 1px;
+    background-color: #fff;
+}
+
+.Jokenpo .cards {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 30px 1fr 30px 1fr 1fr;
+    height: 150px;
+    width: 80vw;
+}
+
+
+@media screen and (max-width: 500px) {
+    .Jokenpo {
+        flex-direction: column;
+    }
+    
+    .Jokenpo .jogoBox {
+        align-items: flex-start;
+        height: 80vh;
+        width: 100vw;
+    }
+
+    .Jokenpo .jogo {
+        width: 85vw;
+        margin-top: 20px;
+    }
+
+    .Jokenpo .cards {
+        width: 100%;
+        grid-template-columns: 10px 1fr 5px 1fr 5px 1fr 10px;
+    }
+}

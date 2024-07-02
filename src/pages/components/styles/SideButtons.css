@@ -1,0 +1,85 @@
+
+.SideButtons {
+    display: flex;
+    flex-direction: column;
+    height: 100vw;
+    width: 20%;
+    padding: 0 15px;
+}
+
+.SideButtons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 100%;
+    margin-top: 200px;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    background-color: #ffb327;
+    color: #2e2e2e;
+    font-size: 1.5vw;
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.SideButtons button:hover {
+    background-color: #ffc965;
+}
+
+.SideButtons button:active {
+    background-color: #fff;
+}
+
+.SideButtons .turno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 150px;
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 0 0 10px 10px;
+    font-size: 1.4vw;
+    margin-top: 10px;
+}
+
+.SideButtons .turno div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    width: 80%;
+    font-size: 5vw;
+    border-top: 1px solid #fff;
+}
+
+
+@media screen and (max-width: 500px) {
+    
+    .SideButtons {
+        flex-direction: row;
+        height: 15%;
+        width: 100vw;
+        margin-top: 5vh;
+        padding: 15px;
+    }
+
+    .SideButtons button {
+        height: 100%;
+        width: 56%;
+        margin-top: 0;
+        border-radius: 10px 0 0 10px;
+        font-size: 8vw;
+    }
+
+    .SideButtons .turno {
+        height: 100%;
+        width: 40%;
+        margin-top: 0;
+        margin-left: 4%;
+        
+        border-radius: 0 10px 10px 0;
+    }
+}
