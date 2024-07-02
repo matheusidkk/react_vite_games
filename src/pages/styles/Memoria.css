@@ -16,13 +16,12 @@
 .Memoria .cards {
     display: flex;
     align-content: flex-start;
-    height: 90%;
+    max-height: 90vh;
     width: 90%;
     flex-wrap: wrap;
     border: 1px solid #fff;
     border-radius: 10px;
 }
-
 
 @media screen and (max-width: 500px) {
     .Memoria {

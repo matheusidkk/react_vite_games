@@ -1,7 +1,7 @@
 .CardContainer {
     position: relative;
-    height: 12.7vw;
-    width: 7.54vw;
+    height: 120px;
+    width: 103px;
     margin: 1%;
     perspective: 1000px;
     cursor: pointer;
@@ -48,4 +48,27 @@
 
 .Card .tras {
     transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 980px) {
+    .CardContainer {
+        height: 100px;
+        width: 70px;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .CardContainer {
+        height: 80px;
+        width: 50px;
+    }
+
+@media screen and (max-width: 450px) {
+    .CardContainer {
+        height: 100px;
+        width: 65px;
+    }
+
+}
 }

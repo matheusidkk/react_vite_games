@@ -7,3 +7,10 @@
   background-color: #1a1a1a;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  .Toastify__toast-container {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}

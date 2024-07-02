@@ -22,6 +22,7 @@ export default function Content() {
           <Route path="/jokenpo" element={<Jokenpo/>}/>
           <Route path="/maiormenor" element={<MaiorMenor/>}/>
           <Route path="/adivinhacao" element={<Adivinhacao/>}/>
+          <Route path="*" element={<Home/>}/>
         </Routes>
     </main>
   )
